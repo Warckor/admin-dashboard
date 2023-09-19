@@ -12,23 +12,21 @@
 :root.dark {
   --bg-color: #27272a;
   --bg-container: #3f3f46;
+  --bg-dashboard: #18181b;
   --border-btn: 2px solid #e4e4e7;
-  --color-btn-bg: #3f3f46;
+  --color-btn-bg: #27272a;
   --color-base-text: #fafafa;
   --shadow-color: #71717a;
-
-  color: rgba(255, 255, 255, 0.87);
 }
 
 :root.light {
   --bg-color: #d4d4d4;
   --bg-container: #fafafa;
+  --bg-dashboard: #1d4ed8;
   --border-btn: 2px solid #0a0a0a;
+  --color-btn-bg: #38bdf8;
   --color-base-text: #0a0a0a;
   --shadow-color: #262626;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
 }
 
 body {
@@ -38,6 +36,15 @@ body {
   min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--color-base-text);
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(1);
 }
 
 .icons {
@@ -73,15 +80,26 @@ body {
 
 .search input {
   width: 500px;
-  height: 30px;
+  height: 20px;
   border-radius: 10px;
   padding: 0.5em;
   border: none;
+  background: var(--color-btn-bg);
 }
 
 .search button {
   border: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
   background: none;
+}
+
+.search button img {
+  width: 20px;
+  height: 20px;
 }
 
 .search button:hover {
@@ -115,6 +133,15 @@ body {
   grid-row: 2 / 3;
 }
 
+.options button {
+  border: var(--border-btn);
+  border-radius: 5px;
+  background: var(--color-btn-bg);
+  width: 100px;
+  padding: 0.5em 2em;
+  margin: 0.5em 0.5em;
+}
+
 .greeting {
   display: flex;
   flex-direction: row;
@@ -141,8 +168,14 @@ body {
 .sidebar-left {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  background: #18181b;
+  background: var(--bg-dashboard);
   padding: 1em;
+}
+
+.dashboard-logo {
+  font-family: Orbitron, Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  color: var(--color-base-text);
 }
 
 .navbar {
@@ -158,14 +191,57 @@ body {
   gap: 2em;
   background: none;
   border: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.config-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.configbar-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+img {
+  src: url(images/logo.png);
 }
 
 .articles {
+  display: grid;
+  grid-template: repeat(auto-fit, minmax(100px, 1fr)) / repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  background: #3f3f46;
   margin: 1em;
+}
+
+.article {
+  background-color: var(--bg-container);
   border-radius: 10px;
+  box-shadow: -2px 3px 5px var(--shadow-color);
+  padding: 1em;
+  text-align: center;
+}
+
+.article h2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Orbitron, Helvetica, Arial, sans-serif;
+}
+
+.article p {
+  font-size: 14px;
 }
 
 .sidebar-right {
