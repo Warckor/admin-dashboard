@@ -14,6 +14,7 @@
   --bg-container: #3f3f46;
   --bg-dashboard: #18181b;
   --border-btn: 2px solid #e4e4e7;
+  --stroke-icon: #fafafa;
   --color-btn-bg: #27272a;
   --color-base-text: #fafafa;
   --shadow-color: #71717a;
@@ -24,6 +25,7 @@
   --bg-container: #fafafa;
   --bg-dashboard: #1d4ed8;
   --border-btn: 2px solid #0a0a0a;
+  --stroke-icon: #0a0a0a;
   --color-btn-bg: #38bdf8;
   --color-base-text: #0a0a0a;
   --shadow-color: #262626;
@@ -51,6 +53,13 @@ button:active {
   width: 20px;
   height: 20px;
   color: white;
+}
+
+.icon-tabler {
+  width: 24px;
+  height: 24px;
+  stroke: var(--stroke-icon);
+  fill: none;
 }
 
 .header {
@@ -175,7 +184,7 @@ button:active {
 .dashboard-logo {
   font-family: Orbitron, Helvetica, Arial, sans-serif;
   font-size: 2em;
-  color: var(--color-base-text);
+  color: #fafafa;
 }
 
 .navbar {
@@ -240,16 +249,54 @@ img {
   font-family: Orbitron, Helvetica, Arial, sans-serif;
 }
 
-.article p {
-  font-size: 14px;
+.article p,
+.announcement p,
+.trending p {
+  font-size: 12px;
 }
 
 .sidebar-right {
+  display: flex;
+  flex-direction: column;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background: #3f3f46;
   margin: 1em;
+}
+
+.announcements,
+.trendings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-container);
   border-radius: 10px;
+  box-shadow: -2px 3px 5px var(--shadow-color);
+}
+
+.trendings {
+  margin-top: 2em;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.announcement,
+.trending {
+  text-align: center;
+}
+
+.announcement h3,
+.trending h3 {
+  font-size: 16px;
+  font-family: Orbitron, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.announcement:not(:last-child),
+.trending:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  width: 80%;
 }
 
 .footer {
