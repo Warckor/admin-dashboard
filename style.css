@@ -60,6 +60,9 @@ button:active {
   height: 24px;
   stroke: var(--stroke-icon);
   fill: none;
+  stroke-width: "2";
+  stroke-linecap: "round";
+  stroke-linejoin: "round";
 }
 
 .icon-tabler:hover {
@@ -97,7 +100,7 @@ button:active {
 }
 
 .search input {
-  width: 500px;
+  width: 70%;
   height: 20px;
   border-radius: 10px;
   padding: 0.5em;
@@ -250,7 +253,7 @@ img {
   background-color: var(--bg-container);
   border-radius: 10px;
   box-shadow: -2px 3px 5px var(--shadow-color);
-  padding: 1em;
+  padding: 1em 1.5em;
   text-align: center;
 }
 
@@ -274,6 +277,17 @@ img {
 .article:hover {
   cursor: pointer;
   transform: scale(1.03);
+}
+
+.article-options button {
+  background: none;
+  border: none;
+}
+
+.article-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .sidebar-right {
