@@ -62,6 +62,15 @@ button:active {
   fill: none;
 }
 
+.icon-tabler:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.icon-tabler:active {
+  transform: scale(1);
+}
+
 .header {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
@@ -236,6 +245,8 @@ img {
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-container);
   border-radius: 10px;
   box-shadow: -2px 3px 5px var(--shadow-color);
@@ -244,15 +255,25 @@ img {
 }
 
 .article h2 {
+  flex: 1;
   font-size: 20px;
   font-weight: bold;
   font-family: Orbitron, Helvetica, Arial, sans-serif;
+}
+
+.article p {
+  flex: 1;
 }
 
 .article p,
 .announcement p,
 .trending p {
   font-size: 12px;
+}
+
+.article:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
 
 .sidebar-right {
@@ -282,6 +303,15 @@ img {
 .announcement,
 .trending {
   text-align: center;
+  width: 80%;
+}
+
+.trending {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+
 }
 
 .announcement h3,
@@ -293,10 +323,18 @@ img {
 
 .announcement:not(:last-child),
 .trending:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: var(--border-btn);
   margin-bottom: 10px;
   padding-bottom: 10px;
   width: 80%;
+}
+
+.avatar {
+  width: 40px;
+}
+
+.user-content {
+  text-align: left;
 }
 
 .footer {
