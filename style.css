@@ -60,7 +60,7 @@ button:active {
   height: 24px;
   stroke: var(--stroke-icon);
   fill: none;
-  stroke-width: "2";
+  stroke-width: 2;
   stroke-linecap: "round";
   stroke-linejoin: "round";
 }
@@ -142,6 +142,63 @@ button:active {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.theme {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.theme-label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+}
+
+#selector {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: -4em;
+  right: 6em;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(16px);
 }
 
 .options-bar {
@@ -352,6 +409,31 @@ img {
 }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   grid-column: 1 / 4;
   grid-row: 3 / 4;
+  font-size: 12px;
+  margin: 1em 2em;
+  color: var(--color-base-text);
+}
+
+.footer button {
+  border: var(--border-btn);
+
+}
+
+.footer a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
+  border: var(--border-btn);
+  border-radius: 5px;
+  background: var(--color-btn-bg);
+  padding: 0.5em 2em;
+  margin: 0.5em 0.5em;
+  text-decoration: none;
+  color: var(--color-base-text)
 }
